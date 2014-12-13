@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.whooz"
+    android:versionCode="62"
+    android:versionName="1.5" >
+
+    <uses-sdk
+        android:minSdkVersion="14"
+        android:targetSdkVersion="19" />
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+
+    <!--
+  IMPORTANT: Change "com.parse.tutorials.pushnotifications.permission.C2D_MESSAGE" in the lines below
+  to match your app's package name + ".permission.C2D_MESSAGE".
+    -->
+    <permission
+        android:name="com.whooz.permission.C2D_MESSAGE"
+        android:protectionLevel="signature" />
+
+    <uses-permission android:name="com.whooz.permission.C2D_MESSAGE" />
+
+    <application
+        android:name=".ScrumptiousApplication"
+        android:allowBackup="true"
+        android:icon="@drawable/jkb"
+        android:label="@string/app_name"
+        android:largeHeap="true"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name="com.whooz.MainActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.whooz.CustomPhotoGalleryActivity"
+            android:label="@string/title_activity_custom_gallery"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.whooz.FragmentSwapperActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.whooz.CreateEventFragment"
+            android:label="@string/title_activity_create_event"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.whooz.DatePick"
+            android:label="@string/title_activity_date_pick"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.whooz.ProfileMainActivity"
+            android:label="@string/title_activity_profile"
+            android:parentActivityName="com.whooz.MainActivity"
+            android:screenOrientation="portrait" >
+
+            <!-- Parent activity meta-data to support API level 7+ -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.whooz.MainActivity" />
+        </activity>
+        <activity
+            android:name="com.whooz.ProfileMainActivityO"
+            android:label="@string/title_activity_profile"
+            android:parentActivityName="com.whooz.MainActivity"
+            android:screenOrientation="portrait" >
+
+            <!-- Parent activity meta-data to support API level 7+ -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.whooz.MainActivity" />
+        </activity>
+        <activity
+            android:name="com.whooz.InviteFriends"
+            android:label="@string/title_activity_invite_friends"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.facebook.LoginActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.whooz.UpdateEventFragment"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.whooz.ShowEventFromInvitedActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+
+        <meta-data
+            android:name="com.facebook.sdk.ApplicationId"
+            android:value="@string/app_id" />
+
+        <activity
+            android:name="com.whooz.PickerActivity"
+            android:label="@string/title_activity_picker"
+            android:screenOrientation="portrait" >
+        </activity>
+
+        <service android:name="com.parse.PushService" />
+
+        <receiver android:name="com.parse.ParseBroadcastReceiver" >
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.intent.action.USER_PRESENT" />
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name="com.parse.GcmBroadcastReceiver"
+            android:permission="com.google.android.c2dm.permission.SEND" >
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+                <action android:name="com.google.android.c2dm.intent.REGISTRATION" />
+
+                <!-- IMPORTANT: Change "com.parse.tutorials.pushnotifications" to match your app's package name. -->
+                <category android:name="com.whooz" />
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name="com.whooz.MyCustomReceiver"
+            android:exported="false" >
+            <intent-filter>
+                <action android:name="com.whooz.UPDATE_STATUS" />
+            </intent-filter>
+        </receiver>
+    </application>
+
+</manifest>

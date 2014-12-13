@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:padding="8dp"
+    android:background="@drawable/mce_list_selector">
+    
+    <ImageView
+        android:id="@+id/eventCoverphoto"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:scaleType="centerCrop"
+        android:layout_alignParentLeft="true"
+        android:layout_marginRight="8dp"
+        android:contentDescription="@string/app_name" />
+ 
+    <TextView
+        android:id="@+id/header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/eventCoverphoto"
+        android:layout_toRightOf="@+id/eventCoverphoto"
+        android:textSize="@dimen/event_header"
+        android:textStyle="bold"
+        android:textColor="#b50909" />
+ 
+    <TextView
+        android:id="@+id/desc"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/header"
+        android:layout_marginTop="1dip"
+        android:layout_toRightOf="@+id/eventCoverphoto"
+        android:textSize="@dimen/event_description"
+        android:textColor="#cc3232" />
+     
+
+    <TextView
+        android:id="@+id/placeAndDate"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/desc"
+        android:layout_marginTop="5dp"
+        android:layout_toRightOf="@+id/eventCoverphoto"
+        android:textColor="#d55353"
+        android:textSize="@dimen/place_and_date" />
+    
+    <TextView
+        android:id="@+id/distance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:textColor="#d55353"
+        android:textSize="@dimen/distance" />
+    
+</RelativeLayout>
+
+

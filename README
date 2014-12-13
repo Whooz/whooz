@@ -1,0 +1,73 @@
+Whooz Project:
+Ofir Peer, Nir Liron, Omer Zitzer, Ofir Hahamof
+
+Basically Whooz is an event manager application.
+To use whooz one need to log in with a Facebook account.
+We use facebook to make the registration process easier and for gathering basic information about our clients.
+
+--CONSEPT--
+Whooz has three main goals, that correspond to three main screens :
+-Bringing you all the events around you (in radius of 2 km),
+ that other people created using the application (Look Around screen).
+-Letting you see distant Events and future events(What's Next Screen).
+- Letting you create your own event (Create Event)
+
+In addition Whooz has an navigation drawer that can be opened by swiping from the 
+left side of the screen. In the nav. drawer one can quickly switch between the app screens,
+open the personal area, and log out.
+
+we will explain each screen shortly:
+--Look Around--
+This screen shows a list of all the events that occurs now, in radius of 2km from the user's current GPS location.
+In addition, if the user is within a radius of 200m from the event, a check in button will be visible. after clicking
+on it, it will be visible to all that that person is taking part in the event.
+Every event has a deadline of 12 hours from the moment it starts. After that, the event is deleted(if not done so before by the event's owner).
+clicking on an event will open the corresponding "Event Page"(description later).
+
+--What's Next--
+In this screen, one could find all the events that doesn't show up in the "Look Around" screen.
+Meaning all the events that are distant then 2km or occur in the future.
+clicking on an event will open the corresponding "Event Page"(description later).
+
+--Create Event--
+In this screen one can create his own screen using the following fields:
+*photo - tapping on the cover photo will allow the user to choose a photo for the event
+*Title - the event's name (mandatory)
+*location - the location of the event. the user can choose a location using two different methods:
+            using google location (by start typing the address) or facebook places (clicking on the facebook places
+            icon we load a list of nearby places from facebook's places data base). (mandatory)
+*event type - public or private. private events will be visible only to invited members.(mandatory)
+*time and date - the time and date of the event. must be valid (no past events. mandatory)
+*description - where the owner can tell more about the event.
+*invite friends with facebook - the owner can invite his facebook friends that has installed the application 
+								to the event.
+
+tapping on the create button will publish the new event.
+
+--Event Page--
+Tapping on an event at the look around and what's next screen will open this page.
+Information about the event will be shown, plus an "event wall" where the users can leave comments
+about the event.
+tapping on a user icon that is shown in "in the event" section will open his public profile.
+
+--My Area--
+from the navigation drawer, tapping on the user's name will open "My Area".
+In this screen, there are three tabs:
+*profile - where the info about the user is visible and can be edited.
+*Invited to events - a list of events other users invited you to.
+*my created events - a list of events the user has created. tapping on one will give him the option to 
+   					 update or delete the event.
+   					 
+
+----   					 
+We tried to make a wide application, using multiple tools and libraries such as facebook graph api for locations and profiles,
+google location, parse, push notifications, gps usage and more...
+We enjoyed the process and learned a bunch of tools that will surly help us in our
+next application.
+and just one more thing:
+Thanks for the interesting and helpful course!
+
+   					 
+ Note about location:
+ The application is a location based app.  
+ Therefore, if there will be no GPS signal, the last location or default location will be chosen .
